@@ -14,15 +14,6 @@ namespace APIVerve
 
     }
     /// <summary>
-    /// Authorizedips data
-    /// </summary>
-    public class Authorizedips
-    {
-        [JsonProperty("ipv4")]
-        public string[] Ipv4 { get; set; }
-
-    }
-    /// <summary>
     /// Spfrecordslist data
     /// </summary>
     public class Spfrecordslist
