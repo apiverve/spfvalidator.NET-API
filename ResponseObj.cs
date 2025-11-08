@@ -4,96 +4,103 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class authorizedips
-{
-    [JsonProperty("ipv4")]
-    public string[] ipv4 { get; set; }
+    /// <summary>
+    /// Authorizedips data
+    /// </summary>
+    public class Authorizedips
+    {
+        [JsonProperty("ipv4")]
+        public string[] Ipv4 { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Authorizedips data
+    /// </summary>
+    public class Authorizedips
+    {
+        [JsonProperty("ipv4")]
+        public string[] Ipv4 { get; set; }
 
-public class authorizedips
-{
-    [JsonProperty("ipv4")]
-    public string[] ipv4 { get; set; }
+    }
+    /// <summary>
+    /// Spfrecordslist data
+    /// </summary>
+    public class Spfrecordslist
+    {
+        [JsonProperty("authorized_ips")]
+        public Authorizedips Authorizedips { get; set; }
 
-}
+        [JsonProperty("chars_num")]
+        public int Charsnum { get; set; }
 
-public class spfrecordslist
-{
-    [JsonProperty("authorized_ips")]
-    public authorizedips authorizedips { get; set; }
+        [JsonProperty("domains")]
+        public string[] Domains { get; set; }
 
-    [JsonProperty("chars_num")]
-    public int charsnum { get; set; }
+        [JsonProperty("origin")]
+        public string Origin { get; set; }
 
-    [JsonProperty("domains")]
-    public string[] domains { get; set; }
+        [JsonProperty("record")]
+        public string Record { get; set; }
 
-    [JsonProperty("origin")]
-    public string origin { get; set; }
+        [JsonProperty("use_macro")]
+        public bool Usemacro { get; set; }
 
-    [JsonProperty("record")]
-    public string record { get; set; }
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("authorized_ips")]
+        public Authorizedips Authorizedips { get; set; }
 
-    [JsonProperty("use_macro")]
-    public bool usemacro { get; set; }
+        [JsonProperty("dns_lookups_num")]
+        public int Dnslookupsnum { get; set; }
 
-}
+        [JsonProperty("domains_extracted")]
+        public string[] Domainsextracted { get; set; }
 
-public class data
-{
-    [JsonProperty("authorized_ips")]
-    public authorizedips authorizedips { get; set; }
+        [JsonProperty("elapsed_ms")]
+        public int Elapsedms { get; set; }
 
-    [JsonProperty("dns_lookups_num")]
-    public int dnslookupsnum { get; set; }
+        [JsonProperty("has_issues")]
+        public bool Hasissues { get; set; }
 
-    [JsonProperty("domains_extracted")]
-    public string[] domainsextracted { get; set; }
+        [JsonProperty("has_spf_record")]
+        public bool Hasspfrecord { get; set; }
 
-    [JsonProperty("elapsed_ms")]
-    public int elapsedms { get; set; }
+        [JsonProperty("host")]
+        public string Host { get; set; }
 
-    [JsonProperty("has_issues")]
-    public bool hasissues { get; set; }
+        [JsonProperty("ip_pass")]
+        public bool Ippass { get; set; }
 
-    [JsonProperty("has_spf_record")]
-    public bool hasspfrecord { get; set; }
+        [JsonProperty("macros_found")]
+        public bool Macrosfound { get; set; }
 
-    [JsonProperty("host")]
-    public string host { get; set; }
+        [JsonProperty("spf_record")]
+        public string Spfrecord { get; set; }
 
-    [JsonProperty("ip_pass")]
-    public bool ippass { get; set; }
+        [JsonProperty("spf_records_list")]
+        public Spfrecordslist[] Spfrecordslist { get; set; }
 
-    [JsonProperty("macros_found")]
-    public bool macrosfound { get; set; }
+        [JsonProperty("spf_valid")]
+        public bool Spfvalid { get; set; }
 
-    [JsonProperty("spf_record")]
-    public string spfrecord { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-    [JsonProperty("spf_records_list")]
-    public spfrecordslist[] spfrecordslist { get; set; }
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-    [JsonProperty("spf_valid")]
-    public bool spfvalid { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-}
-
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
-
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
